@@ -29,6 +29,7 @@ function dataBase() {
         selected(region, elSelect);
         selectChange(data);
         selectCountry(data);
+        searchFun(data);
 
     });
 
@@ -104,11 +105,41 @@ function selectCountry(arr) {
             })
         } else {
             arr.forEach(obj => {
-                if (obj.name.common == value) {
-                    // console.log(obj);
+                if (obj.name.common.includes(value)) {
                     renderUi(obj);
                 }
             })
         }
     })
+}
+
+function searchFun(arr) {
+
+    elForm.addEventListener("submit", (evt) => {
+
+        evt.preventDefault();
+
+        let value = evt.target.mainSearch.value.trim();
+        if (value && value != "") {
+
+            elList.innerHTML = '';
+            arr.forEach(item => {
+                if (item.name.common == value) {
+                    renderUi(item);
+                }
+            })
+
+        } else {
+
+            arr.forEach((item) => {
+
+                renderUi(item);
+
+            });
+
+        }
+
+
+    });
+
 }
