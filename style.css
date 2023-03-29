@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.list {
+    min-height: 50vh;
+}
+
+.card {
+    max-width: 360px;
+    height: 430px;
+}
+
+.card-title {
+    height: 70px;
+    overflow: hidden;
+}
+
+img {
+    height: 180px;
+}
+
+.card-text {
+    display: block;
+    padding: 0;
+}
